@@ -1,9 +1,10 @@
 from MLProject import logger
+import os
 from MLProject.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from MLProject.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from MLProject.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
 from MLProject.pipeline.stage_04_model_trainer import ModelTrainerTrainingPipeline
-# from MLProject.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
+from MLProject.pipeline.stage_05_model_evaluation import ModelEvaluationTrainingPipeline
 
 
 STAGE_NAME = "Data Ingestion stage"
@@ -54,16 +55,19 @@ except Exception as e:
         raise e
 
 
+os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/rasith1998/Complete-ML-Project-with-MLFlow-.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"]="rasith1998" 
+os.environ["MLFLOW_TRACKING_PASSWORD"]="19831f04616c37ee588c883df3b87f940e32052a"
 
-# STAGE_NAME = "Model evaluation stage"
-# try:
-#    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
-#    data_ingestion = ModelEvaluationTrainingPipeline()
-#    data_ingestion.main()
-#    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-# except Exception as e:
-#         logger.exception(e)
-#         raise e
+STAGE_NAME = "Model evaluation stage"
+try:
+   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+   data_ingestion = ModelEvaluationTrainingPipeline()
+   data_ingestion.main()
+   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logger.exception(e)
+        raise e
 
 
 

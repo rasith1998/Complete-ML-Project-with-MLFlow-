@@ -1,0 +1,15 @@
+artifact_uri: file:///F:/Complete-ML-Project-with-MLFlow-/mlruns/0/6b83ead718474628bfbd61ef1a4638bc/artifacts
+end_time: 1691494791835
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6b83ead718474628bfbd61ef1a4638bc
+run_name: nebulous-pug-805
+run_uuid: 6b83ead718474628bfbd61ef1a4638bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1691494783352
+status: 3
+tags: []
+user_id: Rasith
